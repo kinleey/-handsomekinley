@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <style>
+        body {
+            background: linear-gradient(to right, pink, purple);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+        h1 {
+            font-size: 36px;
+            color: white;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+            font-size: 24px;
+            padding: 15px;
+            box-shadow: 0 0 15px red;
+        }
+        .no {
+            background-color: blue;
+            color: white;
+            font-size: 24px;
+            padding: 15px;
+            position: absolute;
+        }
+        #celebration {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will You Be My Girlfriend? 💖</h1>
+    <button class="btn yes" onclick="showLove()">Yes ❤️</button>
+    <button class="btn no" onmouseover="moveButton()">No 😭</button>
+    
+    <div id="celebration">
+        <h1>Yay! 🎉🎊</h1>
+        <img src="https://media.tenor.com/QwTeF-1-0TIAAAAM/dog-dance.gif" alt="Dancing Dog">
+    </div>
+
+    <script>
+        function showLove() {
+            document.body.innerHTML = document.getElementById("celebration").innerHTML;
+        }
+        
+        function moveButton() {
+            let button = document.querySelector(".no");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
